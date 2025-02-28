@@ -1,0 +1,16 @@
+h3{
+        background-color: lightgreen;
+}
+p{
+    color: green;
+}
+.highlight{
+    background-color: yellow;
+}
+.text-large{
+    font-size: large ;
+    font-style: italic;
+}
+#main-heading{
+    color: blue;
+}
