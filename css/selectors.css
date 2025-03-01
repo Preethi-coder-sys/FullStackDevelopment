@@ -1,0 +1,19 @@
+/* Descendant selector */
+div p{
+    color: red;
+}
+
+/* child selector */
+section>p{
+    background-color: lightblue;
+}
+
+/* Adjacent selector */
+p+h2{
+    background-color: lightgray;
+}
+
+/* General selector */
+h2~p{
+    background-color: lightpink;
+}

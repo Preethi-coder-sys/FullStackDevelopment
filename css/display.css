@@ -1,0 +1,14 @@
+.inline{
+    background-color: aqua;
+    padding: 50px;
+}
+.inline-block{
+    background-color: coral;
+    padding: 30px;
+    width: 500px;
+}
+.block{
+    background-color: darkmagenta;
+    padding: 20px;
+    width: 250px;
+}
