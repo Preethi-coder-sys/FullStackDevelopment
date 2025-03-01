@@ -1,0 +1,23 @@
+.container{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color:lightblue;
+}
+.child{
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+}
+.overlap{
+    position: absolute;
+    top: 70px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+    z-index: 10;
+}
