@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <title>Mark Result</title>
+    <style>
+        .tr {
+            background-color: lightgrey;
+        }
+
+        #result {
+            margin-left: 55px;
+            margin-top: 30px;
+            border: 2px solid gray;
+            width: 230px;
+            font-weight: bolder;
+            font-style: italic;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body onload="load()">
+    <h2 style="margin-left: 70px;">Grade Classification</h2>
+
+    <table style="margin-left: 50;width: 10; height: 10;">
+        <tr style="background-color: coral;">
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        <tr class="tr">
+            <td>HTML</td>
+            <td><input type="text" id="s1"></td>
+        </tr>
+        <tr class="tr">
+            <td>CSS</td>
+            <td><input type="text" id="s2"></td>
+        </tr>
+        <tr class="tr">
+            <td>JavaScript</td>
+            <td><input type="text" id="s3"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button style="margin-left: 45px;" onclick="calculatePercentage()">Submit</button>
+            </td>
+        </tr>
+
+    </table>
+
+    <div id="result">
+        
+    </div>
+
+    <script>
+        function calculatePercentage() {
+            var html = parseInt(document.getElementById("s1").value);
+            var css = parseInt(document.getElementById("s2").value);
+            var js = parseInt(document.getElementById("s3").value);
+            var res = document.getElementById("result");
+            var total = 0;
+            var grade;
+
+
+            total = html + css + js;
+
+            if (html < 50 || css < 50 || js < 50) {
+                console.log("html/css/js subject mark is below 50. So Grade is fail");
+                grade = "Fail";
+                res.style.backgroundColor = "red";
+                res.style.color = "white"
+            }
+            else {
+                if (total >= 240) {
+                    grade = "First Class";
+                    result.style.backgroundColor = "green";
+                    result.style.color = "white";
+                }
+                else if (total >= 210 && total <= 239) {
+                    grade = "Second Class";
+                    result.style.backgroundColor = "yellow";
+                    result.style.color = "black";
+                }
+                else if (total >= 180 && total <= 209) {
+                    grade = "Third Class";
+                    result.style.backgroundColor = "lightgreen";
+                    result.style.color = "black";
+                }
+                else if (total >= 150 && total <= 179) {
+                    grade = "Pass";
+                    result.style.backgroundColor = "black";
+                    result.style.color = "white";
+                }
+                else {
+                    window.alert("Invalid input. Please enter the marks")
+                }
+
+            }
+           // console.log(grade);
+            res.innerHTML = grade;
+        }
+        
+
+        function load() {
+            document.getElementById("s1").focus();
+        }
+
+
+    </script>
+
+</body>
+
+</html>
