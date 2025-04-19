@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>javascript learning</title>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>UserName:</td>
+            <td><input type="text" value="" id="name"></td>
+        </tr>
+        <tr>
+            <td>UserAge:</td>
+            <td><input type="text" value="" id="age"></td>
+        </tr>
+        <tr>
+            <td>isEmployee:</td>
+            <td><input id="emp" type="radio" value="True" required>True
+                <input id="emp" type="radio" value="False" required>False
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div>
+                    <button onclick="displayDataType()">Proceed</button>
+                    <button type="reset">Reset</button>
+
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+
+        function displayDataType() {
+            var name = document.getElementById("name").value;
+            let age = parseInt(document.getElementById("age").value);
+            const emp = document.getElementById("emp").value;
+            let result = false;
+            if (emp === 'true') {
+                result = true
+            }
+            else if (emp === 'false') {
+                result = false
+            }
+
+            if (name && age && emp) {
+                console.log("userName is " + typeof (name));
+                console.log("userAge is " + typeof (age));
+                console.log("isEmployee is ", emp, "datatype is " + typeof (result));
+            }
+            else {
+                alert("Invalid input. Please enter username and age!!!")
+                console.log("variable is not present");
+            }
+        }
+    </script>
+</body>
+
+</html>

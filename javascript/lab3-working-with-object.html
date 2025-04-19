@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Employee Details</title>
+</head>
+<h2 align="center">Employee Details</h2>
+EmployeeID: <input type="text" id="empid">
+Name: <input type="text" id="name">
+Designation: <select id="Designation">
+                    <option ></option>
+                    <option id="1">Manager</option>
+                    <option id="2">Tech Lead</option>
+                    <option id="3">Senior Software Engineer</option>
+                    <option id="4">Software Engineer</option>
+            </select>
+Salary: <input type="text" id="salary">            
+<br><br>
+<button onclick="showall()", href="employee.html">Show All Details</button>
+<button onclick="createnew()" href="createnewemployee.html">Create New</button>
+<button onclick="update()" href="updateemployee.html">Update</button>
+
+<P id="show"></P>
+
+<body>
+    <script>
+
+        function createnew() {
+            let Empid = document.getElementById("empid").value;
+            let Name = document.getElementById("name").value;
+            let Designation = document.getElementById("Designation").value;
+            let Salary = document.getElementById("salary").value;
+
+            const person = {
+                ID: Empid,
+                name: Name,
+                designation: Designation,
+                salary: Salary,
+                Detail: function() {
+                    return this.ID + this.name + this.designation + this.salary;
+                }
+            }
+
+            document.getElementById("show").innerHTML = person.Detail()
+        }
+
+        function deletedetail(){
+            pop()
+        }
+    </script>
+</body>    
+</html>
