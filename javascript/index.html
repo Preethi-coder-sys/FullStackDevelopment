@@ -1,0 +1,15 @@
+<input type="file" id="myfile">
+<script>
+    function fileReadCallback() {
+        console.log("File Reading Complete");
+    }
+
+    function  readFile(callback){
+        console.log("Reading File.");
+        setTimeout(()=>{
+            callback();
+        },3000)
+    }
+    readFile(fileReadCallback);
+    console.log("Waiting for file Reading.")
+</script>

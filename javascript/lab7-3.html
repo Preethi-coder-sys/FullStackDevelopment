@@ -1,0 +1,44 @@
+<input type="file" id="myfile">
+
+<script>
+    function taskOne(){
+        return new Promise((res,rej)=>{
+            setTimeout(()=>{
+                const success = true;
+                if(success){
+                    res("task 1 completed.");
+                }
+                else{
+                    rej("Failed to fetch data");
+                }
+            },2000)
+        })
+    }
+
+    function taskTwo(){
+        return new Promise((res,rej)=>{
+            setTimeout(()=>{
+                const success = true;
+                if(success){
+                    res("task 2 completed.");
+                }
+                else{
+                    rej("Failed to fetch data");
+                }
+            },3000)
+        })
+    }
+
+    async function processTasks() {
+        console.log("starting....");
+
+        const result1 = await taskOne();
+        console.log(result1);
+
+        const result2 =await taskTwo();
+        console.log(result2);
+
+        console.log("all task completed");
+    }
+    processTasks() 
+</script>

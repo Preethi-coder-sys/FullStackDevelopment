@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Grade Classification</title>
+</head>
+<body>
+    <h2>Grade Classification</h2>
+    <form onsubmit="return false;">
+        HTML: <input type="text" id="html"><br><br>
+        CSS: <input type="text" id="css"><br><br>
+        JS: <input type="text" id="js"><br><br>
+
+        <button type="button" onclick="calculate()">Calculate Grade</button>
+    </form>
+    <div id="show"></div>
+
+    <script>
+        function calculate() {
+            var html = parseInt(document.getElementById("html").value);
+            var css = parseInt(document.getElementById("css").value);
+            var js = parseInt(document.getElementById("js").value);
+
+            if (isNaN(html) || isNaN(css) || isNaN(js)) {
+                alert("Please enter valid numeric values for all subjects.");
+                return;
+            }
+
+            var total = html + css + js;
+
+            var result = document.getElementById("show");
+
+            if (html < 50 || css < 50 || js < 50) {
+                result.innerHTML = "Fail";
+                result.style.backgroundColor = "red";
+                result.style.color = "black";
+            } else {
+                if (total >= 240) {
+                    result.innerHTML = "First Class";
+                    result.style.backgroundColor = "green";
+                    result.style.color = "white";
+                } else if (total >= 210) {
+                    result.innerHTML = "Second Class";
+                    result.style.backgroundColor = "yellow";
+                    result.style.color = "black";
+                } else if (total >= 180) {
+                    result.innerHTML = "Third Class";
+                    result.style.backgroundColor = "lightgreen";
+                    result.style.color = "black";
+                } else if (total >= 150) {
+                    result.innerHTML = "Pass";
+                    result.style.backgroundColor = "black";
+                    result.style.color = "white";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

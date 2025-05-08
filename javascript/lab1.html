@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>datatype check</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h2>Variable checker</h2>
+    <button onclick="checkdatatype()">Data Type</button>
+
+    <div id="output"></div>
+
+    <script>
+        var name = "pree";
+        let age = 30;
+        let isEmployee = true;
+
+        function checkdatatype() {
+            name = "Preethi";
+            age = 29;
+
+            // try {
+            //     isEmployee = false;
+            // } catch (error) {
+            //     console.error("Error trying to reassign const:", error);
+            // }
+
+            // const output = `
+            //  ${name} ${typeof name}
+            //  ${age} ${typeof age}
+            //  ${isEmployee} ${typeof isEmployee} `;
+
+             const  output = `<p><strong>userName</strong>: ${name} (type: ${typeof name})</p>
+                              <p><strong>userAge</strong>: ${age} (type: ${typeof age})</p>
+                              <p><strong>isEmployee</strong>: ${isEmployee} (type: ${typeof isEmployee})</p> `;
+
+                    document.getElementById("output").innerHTML = output;        
+        }
+
+         
+    </script>
+</body>
+
+</html>

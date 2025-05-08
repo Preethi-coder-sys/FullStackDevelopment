@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manipulate Array of Object</title>
+</head>
+<body>
+    <h2>Employee Details:</h2>
+    <button onclick="display()">Display All</button>
+    <button onclick="addemp()">Add Employee</button>
+    <div id="output"></div>
+
+    <script>
+        // Declare employee globally so all functions can access it
+        let employee = [
+            { id: 101, name: "Pree", designation: "Software Engineer", Salary: 40000 },
+            { id: 102, name: "Preethi", designation: "Software Engineer", Salary: 40000 },
+            { id: 103, name: "Preethiiii", designation: "Software Engineer", Salary: 40000 }
+        ];
+
+        function display() {
+            redisplay();
+        }
+
+        function editemp(index) {
+            employee[index].id = prompt("Enter the name", employee[index].id);
+            employee[index].name = prompt("Enter the name", employee[index].name);
+            employee[index].designation = prompt("Enter the new designation", employee[index].designation);
+            employee[index].Salary = prompt("Enter the new salary", employee[index].Salary);
+            redisplay();
+        }
+
+        function removeemp(index) {
+            employee.splice(index, 1);
+            //employee.pop(index);
+            redisplay();
+        }
+
+        function addemp() {
+            let id = parseInt(prompt("Enter employee ID:"));
+            let name = prompt("Enter employee name:");
+            let designation = prompt("Enter designation:");
+            let Salary = parseFloat(prompt("Enter salary:"));
+
+            if (!isNaN(id) && name && designation && !isNaN(Salary)) {
+                employee.push({ id, name, designation, Salary });
+                redisplay();
+            } else {
+                alert("Invalid input. Employee not added.");
+            }
+        }
+
+        function redisplay() {
+            let content = "";
+            for (let i = 0; i < employee.length; i++) {
+                content += `${i} => id: ${employee[i].id}, name: ${employee[i].name}, designation: ${employee[i].designation}, Salary: ${employee[i].Salary}
+                <button onclick="editemp(${i})">edit</button>
+                <button onclick="removeemp(${i})">remove</button><br><br>`;
+            }
+            document.getElementById("output").innerHTML = content;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Creating Object</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        const employee = {
+            "id" : 101,
+            "name" : "Pree",
+            "designation" : "Software Engineer",
+            "Salary" : 40000
+        };
+        console.log("Employee Detail:-");
+        console.log(`id: ${employee.id}, name: ${employee.name}, designation: ${employee.designation}, Salary: ${employee.Salary}`);
+        
+        giveraise(employee,10000);
+        updatedesignation(employee,"Senior Software Engineer");
+
+        function giveraise(employee,amt)
+        {
+            employee.Salary = employee.Salary + amt; 
+        }
+        
+        function updatedesignation(employee,newdesign)
+        {
+            employee.designation = newdesign;
+        }
+        console.log("Updated Employee Detail:-");
+        console.log(`id: ${employee.id}, name: ${employee.name}, designation: ${employee.designation}, Salary: ${employee.Salary}`);
+
+    </script>
+</body>
+</html>
